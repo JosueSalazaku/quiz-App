@@ -28,7 +28,7 @@ const questions = [
     },
     {
         question: "In 'Bleach,' what is the name of the soul reaper who becomes a substitute for Ichigo Kurosaki?",
-        answer: [
+        answers: [
             {text: "Rukia Kuchiki", correct: true},
             {text: "Orihime Inoue", correct: false},
             {text: "Renji Abarai", correct: false},
@@ -104,6 +104,7 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect) {
         selectedBtn.classList.add("correct");
+        score++;
     } else {
         selectedBtn.classList.add("incorrect");
     }
@@ -115,5 +116,30 @@ function selectAnswer(e) {
     })
     nextButton.style.display = "block";
 }
+
+
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    nextButton.innerHTML = "play Again";
+    nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", () =>{
+    if(currentQuestionIndex < questions.length) {
+       handleNextButton();
+    } else {
+        StartQuiz();
+    }
+})
 
 StartQuiz()
