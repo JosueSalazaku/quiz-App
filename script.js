@@ -82,6 +82,6 @@ function showQuestion() {
          const button = document.createElement("button");
          button.innerHTML = answer.text;
          button.classList.add("btn");
-         answerButton.appendChild(button)
+         answerButton.appendChild(button);
     });
 }
