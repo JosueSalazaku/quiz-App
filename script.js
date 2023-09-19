@@ -18,6 +18,16 @@ const questions = [
         ]
     },
     {
+        question: "What is the name of the school where exorcists are trained in 'Blue Exorcist'?",
+        answer: [
+            {text: "True Cross Academy", correct: true},
+            {text: "Exorcist Academy", correct: false},
+            {text: "Demon Slayer Academy", correct: false},
+            {text: "Devil Hunters School", correct: false},
+        ]
+
+    },
+    {
         question: "Which anime features a guild of powerful wizards who take on various missions and quests?",
         answers: [
             {text: "Fairy Tail", correct: true},
